@@ -1,0 +1,2 @@
+# abstractSpacePositionStudy
+抽象的な空間で位置を認知するための記号性のあるインターフェースのスタディ
