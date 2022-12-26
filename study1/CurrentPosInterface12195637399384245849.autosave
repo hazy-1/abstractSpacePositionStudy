@@ -16,14 +16,15 @@ class CurrentPosInterface {
 
     void drawWindow(){        
         posWindow.beginDraw();
-        // posWindow.background(0);
+        posWindow.background(0);
 
         posWindow.translate(windowSize/2, windowSize/2, 0);
 
         posWindow.noFill();
         posWindow.strokeWeight(1);
         posWindow.stroke(255, 255, 255, 100);
-        posWindow.sphere( imageSize-10 );
+        posWindow.sphere( (imageSize-10)/2 );
+
 
         posWindow.rotateX(cam.getRotations()[0]);
         posWindow.rotateY(cam.getRotations()[1]);

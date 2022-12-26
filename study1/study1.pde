@@ -19,10 +19,11 @@ void setup() {
     obj = new AbstractObj(1000, 2000);
     obj.calcRandomCoord();
 
-    pos = new CurrentPosInterface(300, width-50, height-50);
+    pos = new CurrentPosInterface(300, 300, 300, 5, 100);
 }
 
 void draw() {
+    background(0);
     
     obj.dispAbstractObj();
     pos.dispWindow();
