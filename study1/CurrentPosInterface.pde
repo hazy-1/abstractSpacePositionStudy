@@ -14,25 +14,30 @@ class CurrentPosInterface {
     void drawWindow(){
         
         posWindow.beginDraw();
-        posWindow.background(255);
+        posWindow.background(0);
+        // posWindow.directionalLight(255, 255, 255, 0, 1, 0.5);
 
         posWindow.translate(windowSize/2, windowSize/2, 0);
  
-        posWindow.stroke(0);
-        posWindow.strokeWeight(1);
+        // posWindow.stroke(0);
+        // posWindow.strokeWeight(1);
+        // posWindow.noFill();
+        // posWindow.pushMatrix();
+        //     for(int i = 0; i < 12; i++) {
+        //         posWindow.ellipse(0, 0, 200, 200);
+        //         posWindow.rotateX(i*15);
+        //     }
+        // posWindow.popMatrix();
+        // posWindow.pushMatrix();
+        //     for(int i = 0; i < 12; i++) {
+        //         posWindow.ellipse(0, 0, 200, 200);
+        //         posWindow.rotateY(i*15);
+        //     }
+        // posWindow.popMatrix();
         posWindow.noFill();
-        posWindow.pushMatrix();
-            for(int i = 0; i < 12; i++) {
-                posWindow.ellipse(0, 0, 200, 200);
-                posWindow.rotateX(i*15);
-            }
-        posWindow.popMatrix();
-        posWindow.pushMatrix();
-            for(int i = 0; i < 12; i++) {
-                posWindow.ellipse(0, 0, 200, 200);
-                posWindow.rotateY(i*15);
-            }
-        posWindow.popMatrix();
+        posWindow.strokeWeight(1);
+        posWindow.stroke(255, 255, 255, 100);
+        posWindow.sphere(90);
 
 
         posWindow.rotateX(cam.getRotations()[0]);
@@ -42,7 +47,7 @@ class CurrentPosInterface {
         posWindow.pushMatrix();
             posWindow.translate(0, 0, 100);
             posWindow.noStroke();
-            posWindow.fill(0);
+            posWindow.fill(200, 30, 0);
             posWindow.sphere(5);
         posWindow.popMatrix();
 
