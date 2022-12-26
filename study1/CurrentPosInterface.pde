@@ -14,18 +14,39 @@ class CurrentPosInterface {
     void drawWindow(){
         
         posWindow.beginDraw();
+        posWindow.background(255);
+
+        posWindow.translate(windowSize/2, windowSize/2, 0);
+ 
+        posWindow.stroke(0);
+        posWindow.strokeWeight(1);
+        posWindow.noFill();
+        posWindow.pushMatrix();
+            for(int i = 0; i < 12; i++) {
+                posWindow.ellipse(0, 0, 200, 200);
+                posWindow.rotateX(i*15);
+            }
+        posWindow.popMatrix();
+        posWindow.pushMatrix();
+            for(int i = 0; i < 12; i++) {
+                posWindow.ellipse(0, 0, 200, 200);
+                posWindow.rotateY(i*15);
+            }
+        posWindow.popMatrix();
+
+
         posWindow.rotateX(cam.getRotations()[0]);
         posWindow.rotateY(cam.getRotations()[1]);
         posWindow.rotateZ(cam.getRotations()[2]);
-        posWindow.pushMatrix();
-        // posWindow.translate(windowSize/2, windowSize/2, 50);
-        
-        posWindow.background(0, 0, 0);
-        posWindow.noStroke();
-        posWindow.fill(255);
-        posWindow.sphere(5);
 
+        posWindow.pushMatrix();
+            posWindow.translate(0, 0, 100);
+            posWindow.noStroke();
+            posWindow.fill(0);
+            posWindow.sphere(5);
         posWindow.popMatrix();
+
+
         posWindow.endDraw();
         
     }
@@ -33,8 +54,8 @@ class CurrentPosInterface {
     void dispWindow() {
         drawWindow();
         cam.beginHUD();
-        translate()
-        image(posWindow, windowX, windowY, windowSize, windowSize);
+        //translate()
+        image(posWindow, 0, 0, windowSize, windowSize);
         // image(posWindow, 0, 0, width, height);
         cam.endHUD();
     }

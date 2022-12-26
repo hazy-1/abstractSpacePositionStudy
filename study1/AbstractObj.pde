@@ -26,8 +26,8 @@ class AbstractObj{
     void dispAbstractObj() {
         background(0);
 
-        fill(255, 0, 0);
-        sphere(30);
+        // fill(255, 0, 0);
+        // sphere(30);
         noStroke();
         fill(255);
         // stroke(244);
