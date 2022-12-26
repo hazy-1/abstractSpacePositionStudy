@@ -19,7 +19,7 @@ void setup() {
     obj = new AbstractObj(1000, 2000);
     obj.calcRandomCoord();
 
-    pos = new CurrentPosInterface(300, 300, 300, 5, 100);
+    pos = new CurrentPosInterface(300, 350, height/2+150, 7, 110);
 }
 
 void draw() {
